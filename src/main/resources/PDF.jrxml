@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports 
+    http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" 
+    name="RelatorioDePatos" 
+    pageWidth="595" 
+    pageHeight="842" 
+    columnWidth="555" 
+    leftMargin="20" 
+    rightMargin="20" 
+    topMargin="20" 
+    bottomMargin="20" 
+    uuid="e29d6a5c-4f2e-487b-a1b4-7b1d6aefbc65">
+
+    <field name="nome" class="java.lang.String"/>
+    <field name="status" class="java.lang.String"/>
+    <field name="cliente" class="java.lang.String"/>
+    <field name="tipoCliente" class="java.lang.String"/>
+    <field name="valor" class="java.lang.Double"/>
+    <field name="nivel" class="java.lang.Integer"/>
+
+    <title>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="30" uuid="42cfc179-5958-45e0-bd4c-dc9ed29b7e9f"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="20"/>
+                </textElement>
+                <text><![CDATA[Relatório de Patos]]></text>
+            </staticText>
+        </band>
+    </title>
+
+    <pageHeader>
+        <band height="20">
+            <line>
+                <reportElement x="0" y="19" width="555" height="1" uuid="12f59f09-54e5-4b6b-98a0-c0a61b3f0d36"/>
+            </line>
+        </band>
+    </pageHeader>
+
+    <columnHeader>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="180" height="20" uuid="70ab8c97-5b77-4bda-88da-75aee50aeb8c"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA["Nome"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="180" y="0" width="80" height="20" uuid="f9e26b57-e1d3-4e16-85f0-2f307bbdc9e7"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA["Status"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="260" y="0" width="120" height="20" uuid="3be0d50d-5484-47d3-aafe-7a143762a1e2"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA["Cliente"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="0" width="100" height="20" uuid="819aa6a5-1a80-4c9e-9347-486f37ef6fc0"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA["Tipo de Cliente"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="480" y="0" width="75" height="20" uuid="3c09a3a0-5563-41cb-a4a7-0bfe6295d912"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA["Valor"]]></textFieldExpression>
+            </textField>
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="20">
+            <textField isStretchWithOverflow="true">
+                <reportElement x="0" y="0" width="180" height="20" uuid="9e392b95-20ff-4b5d-95c4-f38c1f4d11a3"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nivel} == 0 ? $F{nome} : ""]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="20" y="0" width="180" height="20" uuid="4f9d304a-0db7-4b94-a869-5e4f4a61cc5e"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nivel} == 1 ? $F{nome} : ""]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="40" y="0" width="180" height="20" uuid="2e4091c1-d99a-4a17-9e92-2489ff46a83c"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nivel} == 2 ? $F{nome} : ""]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="180" y="0" width="80" height="20" uuid="4124db89-f394-44a2-b445-497789d3b8cc"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="260" y="0" width="120" height="20" uuid="24d0f47f-1ff1-4c28-8de0-b0fcf8e98e2d"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{cliente}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="380" y="0" width="100" height="20" uuid="5a5a5fc0-0d6e-4d5c-b3a1-91b07a48af7f"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{tipoCliente}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="480" y="0" width="75" height="20" uuid="b71cfb19-5ad1-4849-9914-7d108bff4f10"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>
